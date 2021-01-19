@@ -4,7 +4,6 @@ import unittest
 import random
 import basic_math as bm
 
-
 class TestBasicMath(unittest.TestCase):
     def test_get_greatest(self):
         random_number_list = [95, 61, 96, 45, 27, 86, 33, 66, 4, 39]
