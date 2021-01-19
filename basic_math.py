@@ -6,6 +6,9 @@
 여기서 간단한 수학을 하는 프로그램을 만들것입니다. 
 """
 
+import sys
+import math
+
 
 def get_greatest(number_list):
     """
@@ -24,8 +27,14 @@ def get_greatest(number_list):
             >>> bm.get_greatest(number_list)
             99
     """
-    greatest_number = None
-    return greatest_number
+    # 기본 max 함수 사용하지 않을 경우
+
+    # target = -sys.maxsize
+    # for number in number_list:
+    #     if number > target:
+    #         target = number
+
+    return max(number_list)
 
 
 def get_smallest(number_list):
@@ -45,8 +54,14 @@ def get_smallest(number_list):
             >>> bm.get_smallest(number_list)
             11
     """
-    smallest_number = None
-    return smallest_number
+    # 기본 min 함수 사용하지 않을 경우
+
+    # target = sys.maxsize
+    # for number in number_list:
+    #     if number < target:
+    #         target = number
+
+    return min(number_list)
 
 
 def get_mean(number_list):
@@ -66,8 +81,17 @@ def get_mean(number_list):
             >>> bm.get_mean(number_list)
             47
     """
-    mean = None
-    return mean
+    # 기본 sum과 len함수 사용하지 않을 경우
+
+    # sum_number = 0
+    # count = 0
+    # for number in number_list:
+    #     sum_number += number
+    #     count += 1
+    # result = sum_number / count
+
+    result = sum(number_list) / len(number_list)
+    return result
 
 
 def get_median(number_list):
@@ -90,5 +114,13 @@ def get_median(number_list):
             >>> bm.get_median(number_list2)
             35.5
     """
-    median = None
+    median = 0
+    number_list.sort()
+
+    list_size = len(number_list)
+    if list_size % 2 == 0:
+        median = (number_list[list_size // 2 - 1] + number_list[list_size // 2]) / 2
+    else:
+        median = number_list[list_size // 2]
+
     return median
